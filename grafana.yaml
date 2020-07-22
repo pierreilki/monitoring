@@ -29,6 +29,8 @@ spec:
           mountPath: /etc/grafana/provisioning/datasources
         - name: grafana-dashboard
           mountPath: /etc/grafana/provisioning/dashboards
+        resources:
+            
       volumes:
       - name: grafana-datasource
         configMap:
@@ -139,9 +141,9 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{job=\"node-exporter\",mode=\"idle\"}[5m])) * 100)",
+              "expr": "100 - (avg by (node) (irate(node_cpu_seconds_total{job=\"node-exporter\",mode=\"idle\"}[5m])) * 100)",
               "interval": "",
-              "legendFormat": "",
+              "legendFormat": "{{node}}",
               "refId": "A"
             }
           ],
@@ -232,9 +234,9 @@ data:
           "steppedLine": false,
           "targets": [
             {
-              "expr": "(avg by (instance)(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)*0.000000001)",
+              "expr": "(avg by (node)(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes)*0.000000001)",
               "interval": "",
-              "legendFormat": "",
+              "legendFormat": "{{node}}",
               "refId": "A"
             }
           ],
@@ -306,5 +308,5 @@ data:
       "timezone": "",
       "title": "Node",
       "uid": "c8_b4r7Gk",
-      "version": 5
+      "version": 3
     }

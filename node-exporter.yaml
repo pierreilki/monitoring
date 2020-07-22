@@ -32,7 +32,7 @@ spec:
           - --no-collector.edac
           - --no-collector.entropy
           - --no-collector.filefd
-          - --no-collector.filesystem
+          #- --no-collector.filesystem
           - --no-collector.hwmon
           - --no-collector.infiniband
           - --no-collector.ipvs
@@ -55,7 +55,7 @@ spec:
           - --no-collector.time
           - --no-collector.timex
           - --no-collector.udp_queues
-          - --no-collector.uname
+          #- --no-collector.uname
           - --no-collector.vmstat
           - --no-collector.xfs
           - --no-collector.zfs
