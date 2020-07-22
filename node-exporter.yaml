@@ -56,7 +56,7 @@ spec:
           - --no-collector.time
           - --no-collector.timex
           - --no-collector.udp_queues
-          #- --no-collector.uname
+          - --no-collector.uname
           - --no-collector.vmstat
           - --no-collector.xfs
           - --no-collector.zfs
