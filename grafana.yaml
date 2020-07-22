@@ -89,6 +89,7 @@ data:
           }
         ]
       },
+      "description": "Dashboard to monitor cluster nodes",
       "editable": true,
       "gnetId": null,
       "graphTooltip": 0,
@@ -282,6 +283,7 @@ data:
           }
         }
       ],
+      "refresh": "10s",
       "schemaVersion": 26,
       "style": "dark",
       "tags": [],
@@ -289,7 +291,7 @@ data:
         "list": []
       },
       "time": {
-        "from": "now-6h",
+        "from": "now-15m",
         "to": "now"
       },
       "timepicker": {
@@ -306,7 +308,7 @@ data:
         ]
       },
       "timezone": "",
-      "title": "Node",
+      "title": "Nodes",
       "uid": "c8_b4r7Gk",
-      "version": 3
+      "version": 4
     }
