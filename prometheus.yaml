@@ -62,7 +62,19 @@ spec:
         volumeMounts:
         - name: config-volume
           mountPath: /etc/prometheus
+        - name: prometheus-data
+          mountPath: /prometheus
+      initContainers:
+      - name: prometheus-data-set-permissions
+        image: busybox
+        command: ["/bin/chown","-R","65534:65534", "/prometheus"]
+        volumeMounts:
+        - name: prometheus-data
+          mountPath: /prometheus
       volumes:
       - name: config-volume
         configMap:
          name: prometheus-config
+      - name: prometheus-data
+        persistentVolumeClaim:
+            claimName: prometheus-data
